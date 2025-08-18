@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="../assets/favicons/png/favicon.png">
+    <title>WE ARE WHOOSH!</title>
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="preloader">
+        <canvas id="bg"></canvas>
+
+        <!-- Container for the cloud text canvas -->
+        <div id="cloud-text-container"></div>
+        <!-- Hidden div used by the script to measure text dimensions -->
+        <div id="text-input" contenteditable="false"></div>
+
+        <!-- Decorative Cloud Images -->
+    <img src="../assets/clouds/right.png" class="decorate decorate-right" alt="">
+    <img src="../assets/clouds/left.png" class="decorate decorate-left" alt="">
+
+        <div id="enter-container">
+            <div id="enter-text">ENTER</div>
+        </div>
+    </div>
+
+    <!-- Main site content would go here, after the preloader -->
+    <!-- <div id="main-content" style="display:none;"><h1>Welcome to the main site!</h1></div> -->
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="js/intro.js"></script>
+</body>
+</html>

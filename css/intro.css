@@ -1,0 +1,107 @@
+/* --- Basic Setup --- */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+}
+
+/* --- Canvas for 3D Scene --- */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- Preloader Container --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 100;
+}
+
+/* --- Cloud Text Container (for the new script) --- */
+#cloud-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Above background, below button */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Hidden div for measuring text for the cloud script */
+#text-input {
+    position: absolute;
+    /* Position off-screen */
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    color: white;
+    /* Preserve line breaks from JS string */
+    white-space: pre-wrap;
+}
+
+/* --- Enter Button Container --- */
+#enter-container {
+    position: absolute;
+    top: 72%; /* Moved further down below the burner */
+    left: 50%; /* Nudged slightly to the right */
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    cursor: pointer;
+}
+
+/* --- Enter Text --- */
+#enter-text {
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* --- Decorative Cloud Images --- */
+.decorate {
+    position: absolute;
+    pointer-events: none; /* They shouldn't be clickable */
+    z-index: 5; /* Above the 3D background but below the text and button */
+    transition: opacity 1.5s ease-in-out;
+    width: 50vw;
+    bottom: 0;
+}
+.decorate-right { right: 0; }
+.decorate-left { left: 0; }
+
+/* --- Animation Classes --- */
+.visible { opacity: 1 !important; }
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    #enter-container {
+        top: 75%;
+        left: 50%;
+    }
+
+    #enter-text {
+        font-size: 1.2rem;
+    }
+}
