@@ -170,7 +170,9 @@ function setupBalloon(balloonModel) {
     balloonModel.scale.set(scale, scale, scale);
 
     // Add animation data
-    balloonModel.userData.speed = Math.random() * 0.3 + 0.4; // Faster so they are visible quicker
+    const speedBase = Math.random() * 0.3 + 0.4; // base per-frame rise speed
+    // Slightly slower on mobile so they float up more gently
+    balloonModel.userData.speed = isMobile ? speedBase * 0.7 : speedBase;
     balloonModel.userData.sway = Math.random() * 5;
     balloonModel.userData.swaySpeed = Math.random() * 0.01;
 
